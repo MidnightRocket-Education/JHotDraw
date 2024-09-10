@@ -49,6 +49,7 @@ public abstract class AlignAction extends AbstractSelectedAction {
 
     @Override
     public void actionPerformed(java.awt.event.ActionEvent e) {
+        System.out.println("");
         CompositeEdit edit = new CompositeEdit(labels.getString("edit.align.text"));
         fireUndoableEditHappened(edit);
         alignFigures(getView().getSelectedFigures(), getSelectionBounds());
