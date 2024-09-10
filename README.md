@@ -13,4 +13,4 @@
 
 This is a fork of jhotdraw from http://sourceforge.net/projects/jhotdraw.
 
-HelloWorld 
+HelloWorld to JHotDraw
