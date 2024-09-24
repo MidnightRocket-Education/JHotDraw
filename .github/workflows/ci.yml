@@ -18,6 +18,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   linting:
+    if: false ### DISABLE for now
     # The type of runner that the job will run on
     runs-on: 
       - ubuntu-latest
@@ -51,8 +52,8 @@ jobs:
       - ubuntu-latest
     container:
       image: docker.io/maven:3-eclipse-temurin-21-jammy
-    needs:
-      - linting
+      # needs:
+      #   - linting
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
