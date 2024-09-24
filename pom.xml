@@ -8,13 +8,13 @@
 	<organization>
 		<name>JHotDraw</name>
 	</organization>
-	<repositories>
+	<distributionManagement>
 		<repository>
 			<id>github</id>
-			<name>GitHub external Packages</name>
-			<url>https://maven.pkg.github.com/sweat-tek/MavenRepository</url>
+			<name>GitHub MidnightRocket-Education Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/MidnightRocket-Education/JHotDraw</url>
 		</repository>
-	</repositories>
+	</distributionManagement>
 	<licenses>
 		<license>
 			<name>GNU Library or Lesser General Public License (LGPL) V2.1</name>
