@@ -505,6 +505,7 @@ public class DefaultFontChooserModel extends AbstractFontChooserModel {
         HashSet<String> nameMap = new HashSet<>();
         nameMap.addAll(Arrays.asList(names));
         for (FontFamilyNode family : families) {
+            //String fName = family.getName
             String fName = family.getName();
             if (nameMap.contains(family.getName())) {
                 coll.add(family.clone());

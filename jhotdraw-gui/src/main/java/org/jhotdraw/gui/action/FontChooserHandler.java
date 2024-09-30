@@ -12,6 +12,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Map;
 import javax.swing.JPopupMenu;
 import javax.swing.undo.AbstractUndoableEdit;
 import javax.swing.undo.UndoableEdit;
@@ -38,7 +39,8 @@ public class FontChooserHandler extends AbstractSelectedAction
     protected JPopupMenu popupMenu;
     protected int isUpdating;
 
-    //protected Map<AttributeKey, Object> attributes;
+    //Denne var markeret som kommentar før.
+    protected Map<AttributeKey, Object> attributes;
     /**
      * Creates a new instance.
      */
@@ -54,9 +56,13 @@ public class FontChooserHandler extends AbstractSelectedAction
 
     @Override
     public void actionPerformed(java.awt.event.ActionEvent evt) {
-        if ((evt.getActionCommand() == null && JFontChooser.APPROVE_SELECTION == null) || (evt.getActionCommand() != null && evt.getActionCommand().equals(JFontChooser.APPROVE_SELECTION))) {
+        evt.getActionCommand();
+        if (evt.getActionCommand() != null && evt.getActionCommand().equals(JFontChooser.APPROVE_SELECTION)) {
             applySelectedFontToFigures();
-        } else if ((evt.getActionCommand() == null && JFontChooser.CANCEL_SELECTION == null) || (evt.getActionCommand() != null && evt.getActionCommand().equals(JFontChooser.CANCEL_SELECTION))) {
+        } else {
+            evt.getActionCommand();
+            if (evt.getActionCommand() != null && evt.getActionCommand().equals(JFontChooser.CANCEL_SELECTION)) {
+            }
         }
         popupMenu.setVisible(false);
     }
@@ -78,6 +84,7 @@ public class FontChooserHandler extends AbstractSelectedAction
             @Override
             public String getPresentationName() {
                 return AttributeKeys.FONT_FACE.getPresentationName();
+                //String names og de andre if-statements var kommenteret før.
                 /*
             String name = (String) getValue(Actions.UNDO_PRESENTATION_NAME_KEY);
             if (name == null) {
@@ -105,7 +112,8 @@ public class FontChooserHandler extends AbstractSelectedAction
             public void redo() {
                 super.redo();
                 for (Figure figure : selectedFigures) {
-                    //restoreData.add(figure.getAttributesRestoreData());
+                    //restoreData var før i tiden markeret som kommentar.
+                    restoreData.add(figure.getAttributesRestoreData());
                     figure.willChange();
                     figure.set(key, undoValue);
                     figure.changed();
@@ -138,7 +146,8 @@ public class FontChooserHandler extends AbstractSelectedAction
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         if (isUpdating++ == 0) {
-            if ((evt.getPropertyName() == null && JFontChooser.SELECTED_FONT_PROPERTY == null) || (evt.getPropertyName() != null && evt.getPropertyName().equals(JFontChooser.SELECTED_FONT_PROPERTY))) {
+            evt.getPropertyName();
+            if (evt.getPropertyName() != null && evt.getPropertyName().equals(JFontChooser.SELECTED_FONT_PROPERTY)) {
                 applySelectedFontToFigures();
             }
         }
