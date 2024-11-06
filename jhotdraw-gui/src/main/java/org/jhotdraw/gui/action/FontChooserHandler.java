@@ -33,7 +33,7 @@ public class FontChooserHandler extends AbstractSelectedAction
         implements PropertyChangeListener {
 
     private static final long serialVersionUID = 1L;
-    protected AttributeKey<Font> key;
+    protected AttributeKey<Font> fontAttributeKey;
     protected JFontChooser fontChooser;
     protected JPopupMenu popupMenu;
     protected int isUpdating;
@@ -42,9 +42,9 @@ public class FontChooserHandler extends AbstractSelectedAction
     /**
      * Creates a new instance.
      */
-    public FontChooserHandler(DrawingEditor editor, AttributeKey<Font> key, JFontChooser fontChooser, JPopupMenu popupMenu) {
+    public FontChooserHandler(DrawingEditor editor, AttributeKey<Font> fontAttributeKey, JFontChooser fontChooser, JPopupMenu popupMenu) {
         super(editor);
-        this.key = key;
+        this.fontAttributeKey = fontAttributeKey;
         this.fontChooser = fontChooser;
         this.popupMenu = popupMenu;
         fontChooser.addActionListener(this);
@@ -54,23 +54,23 @@ public class FontChooserHandler extends AbstractSelectedAction
 
     @Override
     public void actionPerformed(java.awt.event.ActionEvent evt) {
-        if ((evt.getActionCommand() == null && JFontChooser.APPROVE_SELECTION == null) || (evt.getActionCommand() != null && evt.getActionCommand().equals(JFontChooser.APPROVE_SELECTION))) {
+        String selectionEvent = evt.getActionCommand();
+        if (selectionEvent != null && selectionEvent.equals(JFontChooser.APPROVE_SELECTION)) {
             applySelectedFontToFigures();
-        } else if ((evt.getActionCommand() == null && JFontChooser.CANCEL_SELECTION == null) || (evt.getActionCommand() != null && evt.getActionCommand().equals(JFontChooser.CANCEL_SELECTION))) {
         }
         popupMenu.setVisible(false);
     }
 
     protected void applySelectedFontToFigures() {
         final ArrayList<Figure> selectedFigures = new ArrayList<>(getView().getSelectedFigures());
-        final ArrayList<Object> restoreData = new ArrayList<>(selectedFigures.size());
+        final ArrayList<Object> figureRestoreData = new ArrayList<>(selectedFigures.size());
         for (Figure figure : selectedFigures) {
-            restoreData.add(figure.getAttributesRestoreData());
+            figureRestoreData.add(figure.getAttributesRestoreData());
             figure.willChange();
-            figure.set(key, fontChooser.getSelectedFont());
+            figure.set(fontAttributeKey, fontChooser.getSelectedFont());
             figure.changed();
         }
-        getEditor().setDefaultAttribute(key, fontChooser.getSelectedFont());
+        getEditor().setDefaultAttribute(fontAttributeKey, fontChooser.getSelectedFont());
         final Font undoValue = fontChooser.getSelectedFont();
         UndoableEdit edit = new AbstractUndoableEdit() {
             private static final long serialVersionUID = 1L;
@@ -93,7 +93,7 @@ public class FontChooserHandler extends AbstractSelectedAction
             @Override
             public void undo() {
                 super.undo();
-                Iterator<Object> iRestore = restoreData.iterator();
+                Iterator<Object> iRestore = figureRestoreData.iterator();
                 for (Figure figure : selectedFigures) {
                     figure.willChange();
                     figure.restoreAttributesTo(iRestore.next());
@@ -105,9 +105,9 @@ public class FontChooserHandler extends AbstractSelectedAction
             public void redo() {
                 super.redo();
                 for (Figure figure : selectedFigures) {
-                    //restoreData.add(figure.getAttributesRestoreData());
+                    //figureRestoreData.add(figure.getAttributesRestoreData());
                     figure.willChange();
-                    figure.set(key, undoValue);
+                    figure.set(fontAttributeKey, undoValue);
                     figure.changed();
                 }
             }
@@ -125,8 +125,8 @@ public class FontChooserHandler extends AbstractSelectedAction
             if (getView().getSelectionCount() > 0 /*&& fontChooser.isShowing()*/) {
                 for (Figure f : getView().getSelectedFigures()) {
                     if (f instanceof TextHolderFigure) {
-                        TextHolderFigure thf = (TextHolderFigure) f;
-                        fontChooser.setSelectedFont(thf.getFont());
+                        TextHolderFigure textHolderFigure = (TextHolderFigure) f;
+                        fontChooser.setSelectedFont(textHolderFigure.getFont());
                         break;
                     }
                 }
@@ -137,11 +137,13 @@ public class FontChooserHandler extends AbstractSelectedAction
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        if (isUpdating++ == 0) {
-            if ((evt.getPropertyName() == null && JFontChooser.SELECTED_FONT_PROPERTY == null) || (evt.getPropertyName() != null && evt.getPropertyName().equals(JFontChooser.SELECTED_FONT_PROPERTY))) {
+        String selectionEvent = evt.getPropertyName();
+        if (isUpdating++ == 0){
+            if (selectionEvent != null && selectionEvent.equals(JFontChooser.SELECTED_FONT_PROPERTY)) {
                 applySelectedFontToFigures();
             }
+        }else{
+            isUpdating--;
         }
-        isUpdating--;
     }
 }
