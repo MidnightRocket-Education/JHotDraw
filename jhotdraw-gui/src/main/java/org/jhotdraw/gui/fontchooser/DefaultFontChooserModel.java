@@ -33,7 +33,7 @@ import org.jhotdraw.util.ResourceBundleUtil;
  * @author Werner Randelshofer
  * @version $Id$
  */
-public class DefaultFontChooserModel extends AbstractFontChooserModel {
+public class DefaultFontChooserModel extends ExperimentFontChooserModel {
 
     /**
      * Root node.
@@ -536,8 +536,7 @@ public class DefaultFontChooserModel extends AbstractFontChooserModel {
     }
 
     @Override
-    public Object getChild(
-            Object parent, int index) {
+    public Object getChild(Object parent, int index) {
         return ((TreeNode) parent).getChildAt(index);
     }
 
