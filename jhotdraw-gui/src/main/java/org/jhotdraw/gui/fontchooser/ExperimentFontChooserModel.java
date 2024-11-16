@@ -26,47 +26,61 @@ public abstract class ExperimentFontChooserModel implements FontChooserModel{
         return eventListenerList.getListeners(listenerType);
     }
 
-    private enum EventType {
+    private enum eventListenerTypes {
         nodesChanged, nodesInserted, nodesRemoved, changeStructure, treeStructure
     }
 
-    private void notifyListeners(TreeModelEvent e, EventType eventType) {
-        for (TreeModelListener l : getTreeModelListeners()) {
-            switch (eventType) {
-                case nodesInserted:
-                    l.treeNodesChanged(e);
-                    break;
-                case nodesRemoved:
-                    l.treeNodesRemoved(e);
-                    break;
-                case nodesChanged:
-                    l.treeNodesChanged(e);
-                    break;
-                case changeStructure:
-                    l.treeStructureChanged(e);
-                    break;
+    void notifyListeners(Object source, Object[] path, int[] childIndices, Object[] children){
+        Object[] listeners = eventListenerList.getListenerList();
+        TreeModelEvent event = null;
+        for (int i = listeners.length - 2; i>=0; i=-2){
+            TreeModelListener listener = (TreeModelListener) listeners[i];
+            if(listeners[i] == TreeModelListener.class){
+                if(event == null){
+                    event = new TreeModelEvent(source, path, childIndices, children);
+                }
+                listener.notifyAll();
             }
         }
     }
 
+//    private void notifyListeners(TreeModelEvent e, EventType eventType) {
+//        for (TreeModelListener l : getTreeModelListeners()) {
+//            switch (eventType) {
+//                case nodesInserted:
+//                    l.treeNodesChanged(e);
+//                    break;
+//                case nodesRemoved:
+//                    l.treeNodesRemoved(e);
+//                    break;
+//                case nodesChanged:
+//                    l.treeNodesChanged(e);
+//                    break;
+//                case changeStructure:
+//                    l.treeStructureChanged(e);
+//                    break;
+//            }
+//        }
+//    }
+//
     protected void fireTreeNodesInserted(Object source, Object[] path, int[] childIndices, Object[] children){
-        notifyListeners(new TreeModelEvent(source, path, childIndices, children), EventType.nodesInserted);
+        notifyListeners(new TreeModelEvent(source, path, childIndices, children), eventListenerTypes.nodesInserted);
     }
 
     protected void fireTreeNodesRemoved(Object source, Object[] path, int[] childIndices, Object[] children){
-        notifyListeners(new TreeModelEvent(source, path, childIndices, children), EventType.nodesRemoved);
+        notifyListeners(new TreeModelEvent(source, path, childIndices, children), eventListenerList.nodesRemoved);
     }
 
     protected void fireTreeNodesChanged(Object source, Object[] path, int[] childIndices, Object[] children){
-        notifyListeners(new TreeModelEvent(source, path, childIndices, children), EventType.nodesChanged);
+        notifyListeners(new TreeModelEvent(source, path, childIndices, children), eventListenerList.nodesChanged);
     }
 
     protected void fireTreeStructureChanged(Object source, Object[] path, int[] childIndices, Object[] children){
-        notifyListeners(new TreeModelEvent(source, path, childIndices, children), EventType.changeStructure);
+        notifyListeners(new TreeModelEvent(source, path, childIndices, children), eventListenerList.changeStructure);
     }
 
     protected void fireTreeStructure(Object source, TreePath path){
-        notifyListeners(new TreeModelEvent(source, path), EventType.treeStructure);
+        notifyListeners(new TreeModelEvent(source, path), eventListenerTypes.treeStructure);
     }
 
 }
