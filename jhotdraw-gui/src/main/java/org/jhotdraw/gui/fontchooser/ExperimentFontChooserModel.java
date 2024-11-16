@@ -64,8 +64,8 @@ public abstract class ExperimentFontChooserModel implements FontChooserModel{
 //    }
 //
 
-    protected void fireTreeEventManager(Object sorce, Object[] path, int[] childIndices, Object[] children, eventListenerTypes eventListenerTypes){
-        notifyListeners(sorce, path, childIndices, children);
+    protected void fireTreeEventManager(Object source, Object[] path, int[] childIndices, Object[] children, eventListenerTypes eventListenerTypes){
+        notifyListeners(source, path, childIndices, children);
     }
 
     protected void fireTreeNodesInserted(Object source, Object[] path, int[] childIndices, Object[] children){
