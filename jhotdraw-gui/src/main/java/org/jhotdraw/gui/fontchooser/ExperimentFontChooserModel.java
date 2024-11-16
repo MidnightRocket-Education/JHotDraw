@@ -63,24 +63,29 @@ public abstract class ExperimentFontChooserModel implements FontChooserModel{
 //        }
 //    }
 //
+
+    protected void fireTreeEventManager(Object sorce, Object[] path, int[] childIndices, Object[] children, eventListenerTypes eventListenerTypes){
+        notifyListeners(sorce, path, childIndices, children);
+    }
+
     protected void fireTreeNodesInserted(Object source, Object[] path, int[] childIndices, Object[] children){
-        notifyListeners(new TreeModelEvent(source, path, childIndices, children), eventListenerTypes.nodesInserted);
+        fireTreeEventManager(source, path, childIndices, children, eventListenerTypes.nodesInserted);
     }
 
     protected void fireTreeNodesRemoved(Object source, Object[] path, int[] childIndices, Object[] children){
-        notifyListeners(new TreeModelEvent(source, path, childIndices, children), eventListenerList.nodesRemoved);
+        fireTreeEventManager(source, path, childIndices, children, eventListenerTypes.nodesRemoved);
     }
 
     protected void fireTreeNodesChanged(Object source, Object[] path, int[] childIndices, Object[] children){
-        notifyListeners(new TreeModelEvent(source, path, childIndices, children), eventListenerList.nodesChanged);
+        fireTreeEventManager(source, path, childIndices, children, eventListenerTypes.nodesChanged);
     }
 
     protected void fireTreeStructureChanged(Object source, Object[] path, int[] childIndices, Object[] children){
-        notifyListeners(new TreeModelEvent(source, path, childIndices, children), eventListenerList.changeStructure);
+        fireTreeEventManager(source, path, childIndices, children, eventListenerTypes.treeStructure);
     }
 
     protected void fireTreeStructure(Object source, TreePath path){
-        notifyListeners(new TreeModelEvent(source, path), eventListenerTypes.treeStructure);
+        fireTreeEventManager(source, new Object[]{path}, null, null, eventListenerTypes.treeStructure);
     }
 
 }
