@@ -4,29 +4,29 @@ import javax.swing.event.TreeModelEvent;
 import javax.swing.event.TreeModelListener;
 
 public class NodesChangedInserted implements TreeModelListener {
-    private final TreeModelListener handler;
+    private final TreeModelListener eventHandlerListener;
 
-    public NodesChangedInserted(TreeModelListener handler) {
-        this.handler = handler;
+    public NodesChangedInserted(TreeModelListener eventHandlerListener) {
+        this.eventHandlerListener = eventHandlerListener;
     }
 
     @Override
     public void treeNodesChanged(TreeModelEvent e) {
-        handler.treeNodesChanged(e);
+        eventHandlerListener.treeNodesChanged(e);
     }
 
     @Override
     public void treeNodesInserted(TreeModelEvent e) {
-        handler.treeNodesInserted(e);
+        eventHandlerListener.treeNodesInserted(e);
     }
 
     @Override
     public void treeNodesRemoved(TreeModelEvent e) {
-        handler.treeNodesRemoved(e);
+        eventHandlerListener.treeNodesRemoved(e);
     }
 
     @Override
     public void treeStructureChanged(TreeModelEvent e) {
-        handler.treeStructureChanged(e);
+        eventHandlerListener.treeStructureChanged(e);
     }
 }

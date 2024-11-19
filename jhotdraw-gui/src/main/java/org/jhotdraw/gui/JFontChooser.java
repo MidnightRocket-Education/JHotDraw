@@ -16,11 +16,8 @@ import javax.swing.*;
 import javax.swing.event.TreeModelEvent;
 import javax.swing.event.TreeModelListener;
 import javax.swing.tree.*;
-import org.jhotdraw.gui.fontchooser.DefaultFontChooserModel;
-import org.jhotdraw.gui.fontchooser.FontChooserModel;
-import org.jhotdraw.gui.fontchooser.FontCollectionNode;
-import org.jhotdraw.gui.fontchooser.FontFaceNode;
-import org.jhotdraw.gui.fontchooser.FontFamilyNode;
+
+import org.jhotdraw.gui.fontchooser.*;
 import org.jhotdraw.gui.plaf.FontChooserUI;
 import org.jhotdraw.gui.plaf.palette.PaletteFontChooserUI;
 
@@ -120,7 +117,7 @@ public class JFontChooser extends JComponent {
      */
     public JFontChooser() {
         loadAllFonts();
-        model = new DefaultFontChooserModel.UIResource();
+        model = new ExperimentDefaultChooserModel.UIResource();
         model.addTreeModelListener(modelHandler);
         updateUI();
         addPropertyChangeListener(new PropertyChangeListener() {
@@ -128,7 +125,7 @@ public class JFontChooser extends JComponent {
             public void propertyChange(PropertyChangeEvent evt) {
                 if ("ancestor".equals(evt.getPropertyName()) && evt.getNewValue() != null) {
                     try {
-                        ((DefaultFontChooserModel) model).setFonts(getAllFonts());
+                        ((ExperimentDefaultChooserModel) model).setFonts(getAllFonts());
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
@@ -160,6 +157,7 @@ public class JFontChooser extends JComponent {
      * @return the PanelUI object that renders this component
      * @since 1.4
      */
+    @Override
     public FontChooserUI getUI() {
         return (FontChooserUI) ui;
     }

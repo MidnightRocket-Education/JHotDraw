@@ -1,10 +1,9 @@
 package org.jhotdraw.gui.fontchooser;
 
-import org.jhotdraw.util.ResourceBundleUtil;
-
 import javax.swing.tree.*;
 import java.awt.*;
 import java.util.*;
+import org.jhotdraw.util.ResourceBundleUtil;
 
 public class ExperimentDefaultChooserModel extends ExperimentFontChooserModel {
     protected DefaultMutableTreeNode root;
@@ -26,6 +25,7 @@ public class ExperimentDefaultChooserModel extends ExperimentFontChooserModel {
         return collection;
     }
 
+    @SuppressWarnings("unchecked")
     public void setFonts(Font[] fonts){
         ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
         ArrayList<FontFamilyNode> families = new ArrayList<>();
@@ -70,13 +70,6 @@ public class ExperimentDefaultChooserModel extends ExperimentFontChooserModel {
             result &= ((FontFamilyNode) node).isEditable();
             node = (MutableTreeNode) node.getParent();
         }
-        if (node instanceof DefaultMutableTreeNode){
-            result &= ((FontFamilyNode) node).isEditable();
-            node = (MutableTreeNode) node.getParent();
-        }
-        if (result && (node instanceof DefaultMutableTreeNode)){
-            result &= ((FontCollectionNode) node).isEditable();
-        }
         return result;
     }
 
@@ -108,5 +101,8 @@ public class ExperimentDefaultChooserModel extends ExperimentFontChooserModel {
     @Override
     public int getIndexOfChild(Object parent, Object child) {
         return ((TreeNode) parent).getIndex((TreeNode) child);
+    }
+
+    public static class UIResource extends ExperimentDefaultChooserModel implements javax.swing.plaf.UIResource {
     }
 }
