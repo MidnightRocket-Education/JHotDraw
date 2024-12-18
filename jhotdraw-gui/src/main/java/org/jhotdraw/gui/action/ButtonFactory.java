@@ -20,11 +20,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
+import java.util.*;
 import javax.swing.AbstractAction;
 import javax.swing.AbstractButton;
 import javax.swing.Action;
@@ -1654,33 +1650,43 @@ public class ButtonFactory {
      * Creates toolbar buttons and adds them to the specified JToolBar.
      */
     public static void addAlignmentButtonsTo(JToolBar bar, final DrawingEditor editor, java.util.List<Disposable> dsp) {
-        AbstractSelectedAction d;
-        bar.add(d = new AlignAction.West(editor)).setFocusable(false);
-        dsp.add(d);
-        bar.add(d = new AlignAction.East(editor)).setFocusable(false);
-        dsp.add(d);
-        bar.add(d = new AlignAction.Horizontal(editor)).setFocusable(false);
-        dsp.add(d);
-        bar.add(d = new AlignAction.North(editor)).setFocusable(false);
-        dsp.add(d);
-        bar.add(d = new AlignAction.South(editor)).setFocusable(false);
-        dsp.add(d);
-        bar.add(d = new AlignAction.Vertical(editor)).setFocusable(false);
-        dsp.add(d);
-        bar.addSeparator();
-        bar.add(d = new MoveAction.West(editor)).setFocusable(false);
-        dsp.add(d);
-        bar.add(d = new MoveAction.East(editor)).setFocusable(false);
-        dsp.add(d);
-        bar.add(d = new MoveAction.North(editor)).setFocusable(false);
-        dsp.add(d);
-        bar.add(d = new MoveAction.South(editor)).setFocusable(false);
-        dsp.add(d);
-        bar.addSeparator();
-        bar.add(new BringToFrontAction(editor)).setFocusable(false);
-        dsp.add(d);
-        bar.add(new SendToBackAction(editor)).setFocusable(false);
-        dsp.add(d);
+        Map<String, List<AbstractSelectedAction>> alignmentCategories = new LinkedHashMap<>();
+
+        // List of align actions
+        alignmentCategories.put("align", Arrays.asList(
+                new AlignAction.West(editor),
+                new AlignAction.East(editor),
+                new AlignAction.Horizontal(editor),
+                new AlignAction.North(editor),
+                new AlignAction.South(editor),
+                new AlignAction.Vertical(editor)
+        ));
+        // List of move actions
+        alignmentCategories.put("move", Arrays.asList(
+                new MoveAction.West(editor),
+                new MoveAction.East(editor),
+                new MoveAction.North(editor),
+                new MoveAction.South(editor)
+        ));
+        // List of send actions
+        alignmentCategories.put("send", Arrays.asList(
+                new BringToFrontAction(editor),
+                new SendToBackAction(editor)
+        ));
+
+        // Iterate over alignment categories and add actions to the toolbar
+        Iterator<List<AbstractSelectedAction>> categoryIterator = alignmentCategories.values().iterator();
+        while (categoryIterator.hasNext()) {
+            List<AbstractSelectedAction> actions = categoryIterator.next();
+            for (AbstractSelectedAction action : actions) {
+                bar.add(action).setFocusable(false);
+                dsp.add(action);
+            }
+            // Add a separator if there is another category after this one
+            if (categoryIterator.hasNext()) {
+                bar.addSeparator();
+            }
+        }
     }
 
     /**
