@@ -11,8 +11,8 @@
 	<distributionManagement>
 		<repository>
 			<id>github</id>
-			<name>GitHub MidnightRocket-Education Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/MidnightRocket-Education/JHotDraw</url>
+			<name>GitHub MidnightRocketEducation Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/MidnightRocketEducation/JHotDraw</url>
 		</repository>
 	</distributionManagement>
 	<licenses>
