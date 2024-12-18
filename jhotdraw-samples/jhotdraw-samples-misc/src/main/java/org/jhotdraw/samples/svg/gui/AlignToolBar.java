@@ -25,7 +25,7 @@ import org.jhotdraw.util.*;
 public class AlignToolBar extends AbstractToolBar {
 
     private static final long serialVersionUID = 1L;
-    private SelectionComponentDisplayer displayer;
+    private transient SelectionComponentDisplayer displayer;
 
     /**
      * Creates new instance.
