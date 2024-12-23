@@ -1,5 +1,4 @@
 package org.jhotdraw.gui.fontchooser.BDDFonts;
-
 import com.tngtech.jgiven.Stage;
 import com.tngtech.jgiven.annotation.ProvidedScenarioState;
 import org.jhotdraw.gui.JFontChooser;

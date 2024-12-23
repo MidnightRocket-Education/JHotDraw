@@ -8,8 +8,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class WhenFontSelected extends Stage<WhenFontSelected> {
-    @ProvidedScenarioState
-    JTextArea textArea;
 
     @ProvidedScenarioState
     JFontChooser fontChooser;
