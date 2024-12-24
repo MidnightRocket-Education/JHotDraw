@@ -9,13 +9,13 @@ public abstract class ExperimentFontChooserModel implements FontChooserModel{
     protected EventListenerList eventListenerList = new EventListenerList();
 
     @Override
-    public void addTreeModelListener(TreeModelListener l) {
-        eventListenerList.add(TreeModelListener.class, l);
+    public void addTreeModelListener(TreeModelListener treeModelListener) {
+        eventListenerList.add(TreeModelListener.class, treeModelListener);
     }
 
     @Override
-    public void removeTreeModelListener(TreeModelListener l) {
-        eventListenerList.remove(TreeModelListener.class, l);
+    public void removeTreeModelListener(TreeModelListener treeModelListener) {
+        eventListenerList.remove(TreeModelListener.class, treeModelListener);
     }
 
     public TreeModelListener[] getTreeModelListeners() {
@@ -45,19 +45,19 @@ public abstract class ExperimentFontChooserModel implements FontChooserModel{
     }
 
 //    private void notifyListeners(TreeModelEvent e, EventType eventType) {
-//        for (TreeModelListener l : getTreeModelListeners()) {
+//        for (TreeModelListener listeners : getTreeModelListeners()) {
 //            switch (eventType) {
 //                case nodesInserted:
-//                    l.treeNodesChanged(e);
+//                    listeners.treeNodesChanged(e);
 //                    break;
 //                case nodesRemoved:
-//                    l.treeNodesRemoved(e);
+//                    listeners.treeNodesRemoved(e);
 //                    break;
 //                case nodesChanged:
-//                    l.treeNodesChanged(e);
+//                    listeners.treeNodesChanged(e);
 //                    break;
 //                case changeStructure:
-//                    l.treeStructureChanged(e);
+//                    listeners.treeStructureChanged(e);
 //                    break;
 //            }
 //        }

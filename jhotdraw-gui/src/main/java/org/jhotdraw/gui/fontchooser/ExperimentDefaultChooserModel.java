@@ -17,7 +17,7 @@ public class ExperimentDefaultChooserModel extends ExperimentFontChooserModel {
         HashSet<String> nameSet = new HashSet<>();
         nameSet.addAll(Arrays.asList(names));
         for (FontFamilyNode family : families){
-            String fName = family.getName();
+            String fontName = family.getName();
             if(nameSet.contains(family.getName())){
                 collection.add(family.clone());
             }
