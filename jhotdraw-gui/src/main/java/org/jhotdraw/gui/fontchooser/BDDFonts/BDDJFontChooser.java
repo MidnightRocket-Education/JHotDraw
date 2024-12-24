@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import javax.swing.*;
 
-public class BDDJFontChooser extends SimpleScenarioTest<GivenFont, WhenFontSelected, ThenFontApplied>{
+public class BDDJFontChooser extends SimpleScenarioTest{
     @Test
     public void bddJFontChooser() {
         GivenFont givenFont = new GivenFont();

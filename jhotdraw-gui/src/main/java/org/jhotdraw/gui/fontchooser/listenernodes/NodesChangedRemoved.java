@@ -9,14 +9,15 @@ public class NodesChangedRemoved implements TreeModelListener {
     public NodesChangedRemoved(TreeModelListener eventHandlerListener) {
         this.eventHandlerListener = eventHandlerListener;
     }
-    @Override
-    public void treeNodesChanged(TreeModelEvent e) {
-        eventHandlerListener.treeNodesChanged(e);
-    }
 
     @Override
     public void treeNodesInserted(TreeModelEvent e) {
         eventHandlerListener.treeNodesInserted(e);
+    }
+
+    @Override
+    public void treeNodesChanged(TreeModelEvent e) {
+        eventHandlerListener.treeNodesChanged(e);
     }
 
     @Override

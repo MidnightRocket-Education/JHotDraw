@@ -11,13 +11,13 @@ public class NodesChangedStructure implements TreeModelListener {
     }
 
     @Override
-    public void treeNodesChanged(TreeModelEvent e) {
-        eventHandlerListener.treeNodesChanged(e);
+    public void treeNodesInserted(TreeModelEvent e) {
+        eventHandlerListener.treeNodesInserted(e);
     }
 
     @Override
-    public void treeNodesInserted(TreeModelEvent e) {
-        eventHandlerListener.treeNodesInserted(e);
+    public void treeNodesChanged(TreeModelEvent e) {
+        eventHandlerListener.treeNodesChanged(e);
     }
 
     @Override
