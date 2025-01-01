@@ -5,6 +5,9 @@ import java.awt.*;
 import java.util.*;
 import org.jhotdraw.util.ResourceBundleUtil;
 
+/**
+ * The objective with ExperimentDefaultChooserModel is to provide a set fonts, and place them in a hiearchical order.
+ */
 public class ExperimentDefaultChooserModel extends ExperimentFontChooserModel {
     protected DefaultMutableTreeNode root;
 
