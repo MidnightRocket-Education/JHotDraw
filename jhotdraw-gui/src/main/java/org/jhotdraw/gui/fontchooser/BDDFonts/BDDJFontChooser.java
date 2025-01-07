@@ -1,11 +1,11 @@
 package org.jhotdraw.gui.fontchooser.BDDFonts;
-import com.tngtech.jgiven.junit.SimpleScenarioTest;
+import com.tngtech.jgiven.junit.ScenarioTest;
 import org.jhotdraw.gui.JFontChooser;
 import org.testng.annotations.Test;
 
 import javax.swing.*;
 
-public class BDDJFontChooser extends SimpleScenarioTest{
+public class BDDJFontChooser extends ScenarioTest<GivenFont,WhenFontSelected,ThenFontApplied> {
     @Test
     public void bddJFontChooser() {
         GivenFont givenFont = new GivenFont();
