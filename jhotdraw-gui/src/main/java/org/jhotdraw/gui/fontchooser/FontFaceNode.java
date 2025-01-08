@@ -30,6 +30,11 @@ public class FontFaceNode implements MutableTreeNode, Comparable<FontFaceNode>, 
         this.name = beautifyName(typeface.getPSName());
     }
 
+    /**
+     * This methid provides thickness-ability to fonts.
+     * @param name Defines a name that should be formated in terms of thickness.
+     * @return name in order to apply thickness.
+     */
     protected String beautifyName(String name) {
         // 'Beautify' the name
         int p = name.lastIndexOf('-');

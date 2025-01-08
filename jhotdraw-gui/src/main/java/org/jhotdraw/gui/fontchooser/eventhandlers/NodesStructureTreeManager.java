@@ -5,6 +5,10 @@ import org.jhotdraw.gui.fontchooser.listenernodes.NodesChangedStructure;
 import javax.swing.event.TreeModelEvent;
 
 public class NodesStructureTreeManager implements TreeEventNotifier{
+    /**
+     * This class notifies the structure manager in tree structure.
+     * @param event This triggers change of event in tree model to notify tree model.
+     */
     @Override
     public void treeevent(TreeModelEvent event) {
         try{

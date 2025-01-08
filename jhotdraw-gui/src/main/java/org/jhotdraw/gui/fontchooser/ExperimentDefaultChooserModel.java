@@ -15,6 +15,13 @@ public class ExperimentDefaultChooserModel extends ExperimentFontChooserModel {
         root = new DefaultMutableTreeNode();
     }
 
+    /**
+     *
+     * This method combines all fonts and matches their names in order to organize a font-structure.
+     * @param families This attribute symbolizes a list, which is fill with font-properties
+     * @param names This attribute symbolizes the font-families such as Arial.
+     * @return
+     */
     protected ArrayList<FontFamilyNode> collectFamiliesNamed(ArrayList<FontFamilyNode> families, String... names){
         ArrayList<FontFamilyNode> collection = new ArrayList<>();
         HashSet<String> nameSet = new HashSet<>();
@@ -28,6 +35,11 @@ public class ExperimentDefaultChooserModel extends ExperimentFontChooserModel {
         return collection;
     }
 
+    /**
+     * The objective with this method is to set fonts in the collection.
+     * @param fonts Define the font-types in the method.
+     */
+    //This method provides a set of fonts, which the user can select.
     @SuppressWarnings("unchecked")
     public void setFonts(Font[] fonts){
         ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
@@ -48,24 +60,37 @@ public class ExperimentDefaultChooserModel extends ExperimentFontChooserModel {
         Collections.sort(families);
         root.removeAllChildren();
         root.add(new FontCollectionNode(labels.getString("FontCollection.allFonts"), (ArrayList<FontFamilyNode>) families.clone()));
+
         root.add(new FontCollectionNode(labels.getString("FontCollection.web"), collectFamiliesNamed(families,
                 "Arial", "Arial Black", "Comic Sans MS", "Georgia", "Impact", "Times New Roman", "Trebuchet MS", "Verdana", "Webdings")));
+
         root.add(new FontCollectionNode(labels.getString("FontCollection.system"), collectFamiliesNamed(families,
                 "Dialog","DialogInput","Monospaced","SansSerif","Serif")));
+
         root.add(new FontCollectionNode(labels.getString("FontCollection.serif"), collectFamiliesNamed(families,
                 "Times New Roman","Rockwell","Cambria","Georgia","Garamond")));
+
         root.add(new FontCollectionNode(labels.getString("FontCollection.sanSerif"), collectFamiliesNamed(families,
                 "Helvetica Neue","Lucida Sans","Trebuchet MS")));
+
         root.add(new FontCollectionNode(labels.getString("FontCollection.script"),collectFamiliesNamed(families,
                 "Lithos Pro", "Marker Felt","Blackadder ITC","Chiller","Informal Roman")));
+
         root.add(new FontCollectionNode(labels.getString("FontCollection.monospaced"),collectFamiliesNamed(families,
                 "Lucida Console", "Rod", "Consolas", "Menlo", "Monaco")));
+
         root.add(new FontCollectionNode(labels.getString("FontCollection.decorative"),collectFamiliesNamed(families,
                 "Colonna MT", "Cooper Std", "Didot", "Eurostile","Hobo Std")));
+
         root.add(new FontCollectionNode(labels.getString("FontCollection.symbols"),collectFamiliesNamed(families,
                 "Apple Symbols", "Symbol", "Webdings", "Wingdings", "Bookshelf Symbol")));
     }
 
+    /**
+     * This method enables the user to edit font in the tree-structure.
+     * @param node a node in the tree, obtained from this data source
+     * @return result this shows the result after modification of node.
+     */
     @Override
     public boolean isEditable(MutableTreeNode node){
         boolean result = true;
