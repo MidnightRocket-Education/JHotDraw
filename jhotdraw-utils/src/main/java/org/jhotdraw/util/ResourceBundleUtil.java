@@ -450,6 +450,16 @@ public class ResourceBundleUtil implements Serializable {
         return getBundle(baseName, LocaleUtil.getDefault());
     }
 
+    /**
+     * Get the appropriate ResourceBundle subclass.
+     *
+     * @param bundleID The bundle ID
+     * @see #getBundle(String)
+     */
+    public static ResourceBundleUtil getBundle(ResourceBundleID bundleID) throws MissingResourceException {
+        return getBundle(bundleID.getId());
+    }
+
     public void setBaseClass(Class<?> baseClass) {
         this.baseClass = baseClass;
     }
