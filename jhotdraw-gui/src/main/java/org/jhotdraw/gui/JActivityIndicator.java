@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultBoundedRangeModel;
 import org.jhotdraw.gui.event.ActivityManagerEvent;
 import org.jhotdraw.gui.event.ActivityManagerListener;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -77,7 +78,7 @@ public class JActivityIndicator extends javax.swing.JPanel {
      * Creates new form JActivityIndicator
      */
     public JActivityIndicator() {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundleID.GUI_LABELS);
         initComponents();
         setActivityManager(ActivityManager.getInstance());
     }

@@ -24,6 +24,7 @@ import org.jhotdraw.draw.handle.Handle;
 import org.jhotdraw.draw.handle.TransformHandleKit;
 import org.jhotdraw.geom.BezierPath;
 import org.jhotdraw.geom.Geom;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -87,7 +88,7 @@ public class SVGBezierFigure extends BezierFigure {
 
                     @Override
                     public String getPresentationName() {
-                        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
                         return labels.getString("edit.bezierPath.splitSegment.text");
                     }
 

@@ -79,7 +79,7 @@ public class NetView extends AbstractView {
                 setHasUnsavedChanges(undo.hasSignificantEdits());
             }
         });
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         JPanel placardPanel = new JPanel(new BorderLayout());
         javax.swing.AbstractButton pButton;
         pButton = ButtonFactory.createZoomButton(view);

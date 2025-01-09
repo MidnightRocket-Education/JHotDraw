@@ -7,6 +7,8 @@
  */
 package org.jhotdraw.gui.plaf.palette;
 
+import org.jhotdraw.util.ResourceBundleID;
+
 import java.awt.*;
 import java.util.ResourceBundle;
 import javax.swing.*;
@@ -198,9 +200,9 @@ public class PaletteLookAndFeel extends BasicLookAndFeel {
         // Since this does not seem to work in sandboxed environments, we check
         // whether we succeeded and - in case of failure - put the values in
         // by ourselves.
-        table.addResourceBundle("org.jhotdraw.gui.Labels");
+        table.addResourceBundle(ResourceBundleID.GUI_LABELS.getId());
         if (table.getString("ColorChooser.rgbSliders") == null) {
-            ResourceBundle rb = ResourceBundle.getBundle("org.jhotdraw.gui.Labels");
+            ResourceBundle rb = ResourceBundle.getBundle(ResourceBundleID.GUI_LABELS.getId());
             for (String key : rb.keySet()) {
                 table.put(key, rb.getObject(key));
             }

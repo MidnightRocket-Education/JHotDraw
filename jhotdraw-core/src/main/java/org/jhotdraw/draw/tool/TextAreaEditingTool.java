@@ -16,6 +16,7 @@ import javax.swing.undo.UndoableEdit;
 import org.jhotdraw.draw.*;
 import org.jhotdraw.draw.text.*;
 import org.jhotdraw.geom.Insets2D;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -134,7 +135,7 @@ public class TextAreaEditingTool extends AbstractTool implements ActionListener 
 
                 @Override
                 public String getPresentationName() {
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
                     return labels.getString("attribute.text.text");
                 }
 

@@ -31,6 +31,7 @@ import org.jhotdraw.gui.JSheet;
 import org.jhotdraw.gui.event.SheetEvent;
 import org.jhotdraw.gui.event.SheetListener;
 import org.jhotdraw.net.URIUtil;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -79,7 +80,7 @@ public class ExportFileAction extends AbstractViewAction {
 
     public ExportFileAction(Application app, View view, boolean proposeFileName) {
         super(app, view);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
         labels.configureAction(this, ID);
         this.proposeFileName = proposeFileName;
     }
@@ -108,7 +109,7 @@ public class ExportFileAction extends AbstractViewAction {
     public void actionPerformed(ActionEvent evt) {
         final View view = getActiveView();
         if (view.isEnabled()) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
             oldFocusOwner = SwingUtilities.getWindowAncestor(view.getComponent()).getFocusOwner();
             view.setEnabled(false);
             try {

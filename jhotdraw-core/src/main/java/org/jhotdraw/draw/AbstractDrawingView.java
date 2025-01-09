@@ -76,6 +76,7 @@ import org.jhotdraw.draw.event.FigureSelectionListener;
 import org.jhotdraw.draw.event.HandleEvent;
 import org.jhotdraw.draw.event.HandleListener;
 import org.jhotdraw.draw.handle.Handle;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 import org.jhotdraw.util.ReversedList;
 
@@ -955,7 +956,7 @@ public abstract class AbstractDrawingView implements DrawingView, EditableCompon
 
             @Override
             public String getPresentationName() {
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
                 return labels.getString("edit.delete.text");
             }
 
@@ -1006,7 +1007,7 @@ public abstract class AbstractDrawingView implements DrawingView, EditableCompon
 
             @Override
             public String getPresentationName() {
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
                 return labels.getString("edit.duplicate.text");
             }
 

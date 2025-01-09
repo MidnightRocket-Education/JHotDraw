@@ -27,6 +27,7 @@ import org.jhotdraw.gui.JSheet;
 import org.jhotdraw.gui.event.SheetEvent;
 import org.jhotdraw.gui.event.SheetListener;
 import org.jhotdraw.net.URIUtil;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -72,7 +73,7 @@ public abstract class AbstractSaveUnsavedChangesAction extends AbstractViewActio
         }
         final View v = av;
         if (v.isEnabled()) {
-            final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+            final ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
             Window wAncestor = SwingUtilities.getWindowAncestor(v.getComponent());
             oldFocusOwner = (wAncestor == null) ? null : wAncestor.getFocusOwner();
             v.setEnabled(false);
@@ -167,7 +168,7 @@ public abstract class AbstractSaveUnsavedChangesAction extends AbstractViewActio
                 } catch (InterruptedException | ExecutionException ex) {
                     Logger.getLogger(AbstractSaveUnsavedChangesAction.class.getName()).log(Level.SEVERE, null, ex);
                     String message = (ex.getMessage() != null) ? ex.getMessage() : ex.toString();
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
                     JSheet.showMessageSheet(getActiveView().getComponent(),
                                             "<html>" + UIManager.getString("OptionPane.css")
                                             + "<b>" + labels.getFormatted("file.save.couldntSave.message", URIUtil.

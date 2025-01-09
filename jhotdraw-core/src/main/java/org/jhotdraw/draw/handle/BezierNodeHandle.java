@@ -233,7 +233,7 @@ public class BezierNodeHandle extends AbstractHandle {
 
                 @Override
                 public String getPresentationName() {
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
                     return labels.getString("edit.bezierPath.joinSegments.text");
                 }
 
@@ -293,7 +293,7 @@ public class BezierNodeHandle extends AbstractHandle {
 
     @Override
     public String getToolTipText(Point p) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         BezierPath.Node node = getBezierNode();
         return (node == null) ? null : labels.getFormatted("handle.bezierNode.toolTipText",
                 labels.getFormatted(
@@ -345,7 +345,7 @@ public class BezierNodeHandle extends AbstractHandle {
 
                     @Override
                     public String getPresentationName() {
-                        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
                         return labels.getString("edit.bezierPath.joinSegments.text");
                     }
 

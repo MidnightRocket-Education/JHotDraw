@@ -33,6 +33,7 @@ import org.jhotdraw.api.app.Application;
 import org.jhotdraw.api.app.View;
 import org.jhotdraw.app.PrintableView;
 import org.jhotdraw.gui.JSheet;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -75,7 +76,7 @@ public class PrintFileAction extends AbstractViewAction {
      */
     public PrintFileAction(Application app, View view) {
         super(app, view);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
         labels.configureAction(this, ID);
     }
 
@@ -111,7 +112,7 @@ public class PrintFileAction extends AbstractViewAction {
                 } catch (PrinterException e) {
                     String message = (e.getMessage() == null) ? e.toString() : e.getMessage();
                     View view = getActiveView();
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
                     JSheet.showMessageSheet(view.getComponent(),
                             "<html>" + UIManager.getString("OptionPane.css")
                             + "<b>" + labels.getString("couldntPrint") + "</b><br>"
@@ -142,7 +143,7 @@ public class PrintFileAction extends AbstractViewAction {
                 try {
                     job.print();
                 } catch (PrinterException e) {
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
                     JSheet.showMessageSheet(getActiveView().getComponent(),
                             labels.getFormatted("couldntPrint", e));
                 }

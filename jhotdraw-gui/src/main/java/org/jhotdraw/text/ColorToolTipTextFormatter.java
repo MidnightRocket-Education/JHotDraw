@@ -12,6 +12,7 @@ import java.awt.Color;
 import java.awt.color.ColorSpace;
 import java.text.ParseException;
 import org.jhotdraw.color.HSBColorSpace;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -31,7 +32,7 @@ public class ColorToolTipTextFormatter extends ColorFormatter {
     private ResourceBundleUtil labels;
 
     public ColorToolTipTextFormatter() {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
     }
 
     @Override

@@ -9,6 +9,7 @@ package org.jhotdraw.draw.action;
 
 import org.jhotdraw.draw.*;
 import org.jhotdraw.util.ActionUtil;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -28,7 +29,7 @@ public class ToggleGridAction extends AbstractDrawingViewAction {
     public ToggleGridAction(DrawingEditor editor) {
         super(editor);
         ResourceBundleUtil labels
-                = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         labels.configureAction(this, ID);
         updateViewState();
     }

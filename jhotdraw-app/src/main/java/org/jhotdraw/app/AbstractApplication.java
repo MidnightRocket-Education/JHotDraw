@@ -376,7 +376,7 @@ public abstract class AbstractApplication extends AbstractBean implements Applic
     }
 
     protected void initLabels() {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
     }
 
     /**

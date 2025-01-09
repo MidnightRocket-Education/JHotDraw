@@ -261,7 +261,7 @@ public class BezierControlPointHandle extends AbstractHandle {
 
     @Override
     public String getToolTipText(Point p) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         BezierPath.Node node = getBezierNode();
         if (node == null) {
             return null;

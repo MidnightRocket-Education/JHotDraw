@@ -10,6 +10,7 @@ package org.jhotdraw.app.action.file;
 import org.jhotdraw.api.app.Application;
 import org.jhotdraw.api.app.View;
 import org.jhotdraw.api.gui.URIChooser;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -38,7 +39,7 @@ public class LoadDirectoryAction extends LoadFileAction {
      */
     public LoadDirectoryAction(Application app, View view) {
         super(app, view);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
         labels.configureAction(this, ID);
     }
 

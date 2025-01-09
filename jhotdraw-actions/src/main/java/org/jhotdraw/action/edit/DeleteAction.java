@@ -104,7 +104,7 @@ public class DeleteAction extends TextAction {
             };
             target.addPropertyChangeListener(new WeakPropertyChangeListener(propertyHandler));
         }
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.ACTION_LABELS);
         labels.configureAction(this, ID);
     }
 

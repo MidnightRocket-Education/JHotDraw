@@ -31,7 +31,7 @@ public class MinimizeWindowAction extends AbstractViewAction {
      */
     public MinimizeWindowAction(Application app, View view) {
         super(app, view);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.ACTION_LABELS);
         labels.configureAction(this, ID);
     }
 

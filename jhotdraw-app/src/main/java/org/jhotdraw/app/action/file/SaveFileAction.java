@@ -27,6 +27,7 @@ import org.jhotdraw.gui.JSheet;
 import org.jhotdraw.gui.event.SheetEvent;
 import org.jhotdraw.gui.event.SheetListener;
 import org.jhotdraw.net.URIUtil;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -79,7 +80,7 @@ public class SaveFileAction extends AbstractViewAction {
     public SaveFileAction(Application app, View view, boolean saveAs) {
         super(app, view);
         this.saveAs = saveAs;
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
         labels.configureAction(this, ID);
     }
 
@@ -114,7 +115,7 @@ public class SaveFileAction extends AbstractViewAction {
                             if (!getApplication().getModel().isAllowMultipleViewsPerURI()) {
                                 for (View v : getApplication().getViews()) {
                                     if (v != view && v.getURI() != null && v.getURI().equals(uri)) {
-                                        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                                        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
                                         JSheet.showMessageSheet(view.getComponent(), labels.getFormatted("file.saveAs.couldntSaveIntoOpenFile.message", evt.getFileChooser().getSelectedFile().getName()));
                                         view.setEnabled(true);
                                         return;
@@ -167,7 +168,7 @@ public class SaveFileAction extends AbstractViewAction {
             protected void failed(Throwable value) {
                 value.printStackTrace();
                 String message = value.getMessage() != null ? value.getMessage() : value.toString();
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
                 JSheet.showMessageSheet(getActiveView().getComponent(),
                         "<html>" + UIManager.getString("OptionPane.css")
                         + "<b>" + labels.getFormatted("file.save.couldntSave.message", URIUtil.getName(file)) + "</b><p>"

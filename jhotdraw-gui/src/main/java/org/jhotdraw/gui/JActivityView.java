@@ -14,6 +14,8 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import javax.swing.*;
 import javax.swing.event.*;
+
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -76,7 +78,7 @@ public class JActivityView extends javax.swing.JPanel {
      * Creates a new JActivityView.
      */
     public JActivityView(ActivityModel model) {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundleID.GUI_LABELS);
         initComponents();
         closeButton.setVisible(false);
         setModel(model);

@@ -17,6 +17,7 @@ import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.event.TransformRestoreEdit;
 import org.jhotdraw.draw.locator.Locator;
 import org.jhotdraw.draw.locator.RelativeLocator;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -134,7 +135,7 @@ public class ResizeHandleKit {
 
         @Override
         public String getToolTipText(Point p) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
             return labels.getString("handle.resize.toolTipText");
         }
 

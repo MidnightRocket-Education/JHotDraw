@@ -11,6 +11,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import org.jhotdraw.draw.GridConstrainer;
 import org.jhotdraw.formatter.JavaNumberFormatter;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -32,7 +33,7 @@ public class EditGridPanel extends javax.swing.JPanel {
      * Creates new instance.
      */
     public EditGridPanel() {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         initComponents();
         widthField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0, 1000, 1));
         heightField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0, 1000, 1));

@@ -30,7 +30,7 @@ public class MultiEditorSample {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
                 // Create four drawing views, each one with its own drawing
                 DrawingView view1 = new DefaultDrawingView();
                 view1.setDrawing(createDrawing());

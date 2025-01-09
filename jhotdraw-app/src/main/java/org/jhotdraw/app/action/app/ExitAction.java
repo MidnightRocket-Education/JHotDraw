@@ -7,19 +7,6 @@
  */
 package org.jhotdraw.app.action.app;
 
-import java.awt.Component;
-import java.awt.Rectangle;
-import java.awt.event.ActionEvent;
-import java.net.URI;
-import java.util.concurrent.ExecutionException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JDialog;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
-import javax.swing.SwingWorker;
-import javax.swing.UIManager;
 import org.jhotdraw.action.AbstractApplicationAction;
 import org.jhotdraw.api.app.Application;
 import org.jhotdraw.api.app.View;
@@ -28,7 +15,16 @@ import org.jhotdraw.gui.JSheet;
 import org.jhotdraw.gui.event.SheetEvent;
 import org.jhotdraw.gui.event.SheetListener;
 import org.jhotdraw.net.URIUtil;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.net.URI;
+import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Exits the application after letting the user review all unsaved views.
@@ -56,7 +52,7 @@ public class ExitAction extends AbstractApplicationAction {
      */
     public ExitAction(Application app) {
         super(app);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
         labels.configureAction(this, ID);
     }
 
@@ -82,7 +78,7 @@ public class ExitAction extends AbstractApplicationAction {
                 app.setEnabled(true);
                 return;
             }
-            final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+            final ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
             switch (unsavedViewsCount) {
                 case 0:
                     doExit();
@@ -197,7 +193,7 @@ public class ExitAction extends AbstractApplicationAction {
 
     protected void reviewChanges() {
         if (unsavedView.isEnabled()) {
-            final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+            final ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
             oldFocusOwner = SwingUtilities.getWindowAncestor(unsavedView.getComponent()).getFocusOwner();
             unsavedView.setEnabled(false);
             URI unsavedURI = unsavedView.getURI();
@@ -294,7 +290,7 @@ public class ExitAction extends AbstractApplicationAction {
                     doExit();
                 } catch (InterruptedException | ExecutionException ex) {
                     Logger.getLogger(ExitAction.class.getName()).log(Level.SEVERE, null, ex);
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
                     JSheet.showMessageSheet(v.getComponent(),
                                             "<html>" + UIManager.getString("OptionPane.css")
                                             + "<b>" + labels.format("file.save.couldntSave.message", URIUtil.
@@ -329,7 +325,7 @@ public class ExitAction extends AbstractApplicationAction {
                     reviewNext();
                 } catch (InterruptedException | ExecutionException ex) {
                     Logger.getLogger(ExitAction.class.getName()).log(Level.SEVERE, null, ex);
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
                     JSheet.showMessageSheet(v.getComponent(),
                                             "<html>" + UIManager.getString("OptionPane.css")
                                             + "<b>" + labels.format("file.save.couldntSave.message", uri) + "</b><p>"

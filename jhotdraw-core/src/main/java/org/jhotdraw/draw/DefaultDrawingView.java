@@ -1308,7 +1308,7 @@ public class DefaultDrawingView
 
             @Override
             public String getPresentationName() {
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
                 return labels.getString("edit.delete.text");
             }
 
@@ -1359,7 +1359,7 @@ public class DefaultDrawingView
 
             @Override
             public String getPresentationName() {
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
                 return labels.getString("edit.duplicate.text");
             }
 

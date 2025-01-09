@@ -87,7 +87,7 @@ public class PrintApplicationFileAction extends PrintFileAction {
                     app.dispose(p);
                 } catch (InterruptedException | ExecutionException ex) {
                     Logger.getLogger(PrintApplicationFileAction.class.getName()).log(Level.SEVERE, null, ex);
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
                     app.dispose(p);
                     JOptionPane.showMessageDialog(
                             null,

@@ -8,6 +8,7 @@
 package org.jhotdraw.draw.action;
 
 import org.jhotdraw.draw.*;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -27,7 +28,7 @@ public class IncreaseHandleDetailLevelAction extends AbstractSelectedAction {
     public IncreaseHandleDetailLevelAction(DrawingEditor editor) {
         super(editor);
         ResourceBundleUtil labels
-                = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         labels.configureAction(this, ID);
         //putValue(AbstractAction.NAME, labels.getString("editSelectSame"));
         //  putValue(AbstractAction.MNEMONIC_KEY, labels.getString("editSelectSameMnem"));

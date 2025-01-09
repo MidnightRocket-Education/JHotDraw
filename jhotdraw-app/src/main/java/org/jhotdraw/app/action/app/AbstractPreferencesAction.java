@@ -10,6 +10,7 @@ package org.jhotdraw.app.action.app;
 
 import org.jhotdraw.api.app.Application;
 import org.jhotdraw.action.AbstractApplicationAction;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -35,7 +36,7 @@ public abstract class AbstractPreferencesAction extends AbstractApplicationActio
      */
     public AbstractPreferencesAction(Application app) {
         super(app);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
         labels.configureAction(this, ID);
     }
 }

@@ -15,6 +15,7 @@ import org.jhotdraw.api.app.Application;
 import org.jhotdraw.draw.DrawingEditor;
 import org.jhotdraw.draw.GridConstrainer;
 import org.jhotdraw.draw.action.AbstractDrawingViewAction;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 import org.jhotdraw.util.prefs.PreferencesUtil;
 
@@ -42,7 +43,7 @@ public class EditGridAction extends AbstractDrawingViewAction {
     public EditGridAction(Application app, DrawingEditor editor) {
         super(editor);
         this.app = app;
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         labels.configureAction(this, ID);
     }
 
@@ -64,7 +65,7 @@ public class EditGridAction extends AbstractDrawingViewAction {
 
     protected JDialog getDialog() {
         if (dialog == null) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
             dialog = new JDialog();
             dialog.setTitle(labels.getString("editGrid"));
             dialog.setResizable(false);

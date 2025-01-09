@@ -65,7 +65,7 @@ public class DuplicateAction extends AbstractSelectionAction {
      */
     public DuplicateAction(JComponent target) {
         super(target);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.ACTION_LABELS);
         labels.configureAction(this, ID);
     }
 

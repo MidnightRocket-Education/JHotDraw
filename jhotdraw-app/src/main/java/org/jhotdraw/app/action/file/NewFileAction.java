@@ -45,7 +45,7 @@ public class NewFileAction extends AbstractApplicationAction {
 
     public NewFileAction(Application app, String id) {
         super(app);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
         labels.configureAction(this, id);
     }
 

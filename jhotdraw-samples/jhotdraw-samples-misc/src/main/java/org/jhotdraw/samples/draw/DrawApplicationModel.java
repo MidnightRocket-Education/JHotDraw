@@ -87,7 +87,7 @@ public class DrawApplicationModel extends DefaultApplicationModel {
      */
     @Override
     public List<JToolBar> createToolBars(Application a, View pr) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         DrawView p = (DrawView) pr;
         DrawingEditor editor;
         if (p == null) {
@@ -120,7 +120,7 @@ public class DrawApplicationModel extends DefaultApplicationModel {
 
     public void addDefaultCreationButtonsTo(JToolBar tb, final DrawingEditor editor,
             Collection<Action> drawingActions, Collection<Action> selectionActions) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         ButtonFactory.addSelectionToolTo(tb, editor, drawingActions, selectionActions);
         tb.addSeparator();
         AbstractAttributedFigure af;

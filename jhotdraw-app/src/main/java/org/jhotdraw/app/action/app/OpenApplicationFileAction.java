@@ -141,7 +141,7 @@ public class OpenApplicationFileAction extends AbstractApplicationAction {
                 if (exists) {
                     view.read(uri, null);
                 } else {
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
                     throw new IOException(labels.
                             getFormatted("file.open.fileDoesNotExist.message", URIUtil.getName(uri)));
                 }
@@ -165,7 +165,7 @@ public class OpenApplicationFileAction extends AbstractApplicationAction {
                     Logger.getLogger(OpenApplicationFileAction.class.getName()).log(Level.SEVERE, null, ex);
                     ex.printStackTrace();
                     String message = ex.getMessage() != null ? ex.getMessage() : ex.toString();
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
                     JSheet.showMessageSheet(view.getComponent(),
                                             "<html>" + UIManager.getString("OptionPane.css")
                                             + "<b>" + labels.getFormatted("file.open.couldntOpen.message", URIUtil.

@@ -81,7 +81,7 @@ public class NetApplicationModel extends DefaultApplicationModel {
     @Override
     public ActionMap createActionMap(Application a, View v) {
         ActionMap m = super.createActionMap(a, v);
-        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         AbstractAction aa;
         m.put(ExportFileAction.ID, new ExportFileAction(a, v));
         m.put("view.toggleGrid", aa = new ToggleViewPropertyAction(a, v, NetView.GRID_VISIBLE_PROPERTY));
@@ -129,7 +129,7 @@ public class NetApplicationModel extends DefaultApplicationModel {
      */
     @Override
     public java.util.List<JToolBar> createToolBars(Application a, View pr) {
-        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         NetView p = (NetView) pr;
         DrawingEditor editor;
         if (p == null) {

@@ -13,6 +13,8 @@ import java.awt.*;
 import java.awt.geom.*;
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.*;
+
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -89,7 +91,7 @@ public class TextOverflowHandle extends AbstractHandle {
     @Override
     public String getToolTipText(Point p) {
         return (getOwner().isTextOverflow())
-                ? ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").
+                ? ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS).
                         getString("handle.textOverflow.toolTipText")
                 : null;
     }

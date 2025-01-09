@@ -42,7 +42,7 @@ public class ClearFileAction extends AbstractSaveUnsavedChangesAction {
      */
     public ClearFileAction(Application app, View view) {
         super(app, view);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
         labels.configureAction(this, "file.clear");
     }
 

@@ -170,7 +170,7 @@ public class SVGView extends AbstractView {
                 }
             }
             if (!success) {
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.APP_LABELS);
                 throw new IOException(labels.getFormatted("file.open.unsupportedFileFormat.message", URIUtil.getName(uri)));
             }
             SwingUtilities.invokeAndWait(new Runnable() {

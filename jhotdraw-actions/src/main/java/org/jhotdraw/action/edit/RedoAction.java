@@ -36,7 +36,7 @@ public class RedoAction extends AbstractViewAction {
 
     private static final long serialVersionUID = 1L;
     public static final String ID = "edit.redo";
-    private ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+    private ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.ACTION_LABELS);
     private PropertyChangeListener redoActionPropertyListener = new PropertyChangeListener() {
         @Override
         public void propertyChange(PropertyChangeEvent evt) {

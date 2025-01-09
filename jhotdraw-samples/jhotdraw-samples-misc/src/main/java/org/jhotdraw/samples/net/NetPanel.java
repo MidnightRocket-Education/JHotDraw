@@ -49,7 +49,7 @@ public class NetPanel extends JPanel {
      * Creates new instance.
      */
     public NetPanel() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         initComponents();
         undoManager = new UndoRedoManager();
         editor = new DefaultDrawingEditor();

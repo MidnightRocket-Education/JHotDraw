@@ -38,7 +38,7 @@ public class JAttributeTextField<T> extends JLifeFormattedTextField implements A
     @Override
     protected void paintComponent(Graphics g) {
         if (!isFocusOwner() && isMultipleValues) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.GUI_LABELS);
             Color c = getForeground();
             setForeground(new Color(0x0, true));
             super.paintComponent(g);

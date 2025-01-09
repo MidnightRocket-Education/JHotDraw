@@ -34,7 +34,7 @@ public class FocusWindowAction extends AbstractAction {
      */
     public FocusWindowAction(View view) {
         this.view = view;
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.ACTION_LABELS);
         labels.configureAction(this, ID);
         //setEnabled(false);
         setEnabled(view != null);
@@ -76,7 +76,7 @@ public class FocusWindowAction extends AbstractAction {
     }
 
     private String getTitle() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.ACTION_LABELS);
         String title = labels.getString("unnamedFile");
         if (view != null) {
             URI uri = view.getURI();

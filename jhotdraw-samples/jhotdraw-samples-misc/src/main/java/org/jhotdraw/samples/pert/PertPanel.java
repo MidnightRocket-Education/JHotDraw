@@ -51,7 +51,7 @@ public class PertPanel extends JPanel {
      * Creates new instance.
      */
     public PertPanel() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         initComponents();
         undoManager = new UndoRedoManager();
         editor = new DefaultDrawingEditor();
@@ -171,7 +171,7 @@ public class PertPanel extends JPanel {
         // AttributeKeys for the entitie sets
         HashMap<AttributeKey<?>, Object> attributes;
         ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.pert.Labels");
-        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         ButtonFactory.addSelectionToolTo(tb, editor);
         tb.addSeparator();
         attributes = new HashMap<AttributeKey<?>, Object>();

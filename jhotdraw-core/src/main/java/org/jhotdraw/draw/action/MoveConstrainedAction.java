@@ -13,6 +13,7 @@ import java.util.HashSet;
 import org.jhotdraw.draw.*;
 import org.jhotdraw.draw.event.TransformEdit;
 import org.jhotdraw.undo.CompositeEdit;
+import org.jhotdraw.util.ResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -91,7 +92,7 @@ public abstract class MoveConstrainedAction extends AbstractSelectedAction {
 
         public East(DrawingEditor editor) {
             super(editor, TranslationDirection.EAST);
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
             labels.configureAction(this, ID);
         }
     }
@@ -103,7 +104,7 @@ public abstract class MoveConstrainedAction extends AbstractSelectedAction {
 
         public West(DrawingEditor editor) {
             super(editor, TranslationDirection.WEST);
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
             labels.configureAction(this, ID);
         }
     }
@@ -115,7 +116,7 @@ public abstract class MoveConstrainedAction extends AbstractSelectedAction {
 
         public North(DrawingEditor editor) {
             super(editor, TranslationDirection.NORTH);
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
             labels.configureAction(this, ID);
         }
     }
@@ -127,7 +128,7 @@ public abstract class MoveConstrainedAction extends AbstractSelectedAction {
 
         public South(DrawingEditor editor) {
             super(editor, TranslationDirection.SOUTH);
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
             labels.configureAction(this, ID);
         }
     }
