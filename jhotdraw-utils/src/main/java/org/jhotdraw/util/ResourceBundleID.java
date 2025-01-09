@@ -1,6 +1,6 @@
 package org.jhotdraw.util;
 
-public enum ResourceBundleID {
+public enum ResourceBundleID implements ResourceBundleIDProvider {
 	DRAW_LABELS("org.jhotdraw.draw.Labels"),
 	GUI_LABELS("org.jhotdraw.gui.Labels"),
 	ACTION_LABELS("org.jhotdraw.action.Labels"),
@@ -12,6 +12,7 @@ public enum ResourceBundleID {
 		this.id = id;
 	}
 
+	@Override
 	public String getId() {
 		return this.id;
 	}
