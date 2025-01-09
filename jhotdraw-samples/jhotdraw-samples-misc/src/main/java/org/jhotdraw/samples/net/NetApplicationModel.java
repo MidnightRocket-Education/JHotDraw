@@ -33,6 +33,7 @@ import org.jhotdraw.draw.tool.TextCreationTool;
 import org.jhotdraw.draw.tool.Tool;
 import org.jhotdraw.gui.JFileURIChooser;
 import org.jhotdraw.gui.action.ButtonFactory;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.samples.net.figures.NodeFigure;
 import org.jhotdraw.util.*;
 
@@ -111,7 +112,7 @@ public class NetApplicationModel extends DefaultApplicationModel {
     private void addCreationButtonsTo(JToolBar tb, final DrawingEditor editor) {
         // AttributeKeys for the entitie sets
         HashMap<AttributeKey<?>, Object> attributes;
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.net.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.DRAW_VIEW);
         ButtonFactory.addSelectionToolTo(tb, editor);
         tb.addSeparator();
         attributes = new HashMap<AttributeKey<?>, Object>();

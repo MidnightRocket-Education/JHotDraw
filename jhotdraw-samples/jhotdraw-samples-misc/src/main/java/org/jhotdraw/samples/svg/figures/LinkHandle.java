@@ -14,6 +14,8 @@ import org.jhotdraw.draw.*;
 import org.jhotdraw.draw.handle.AbstractHandle;
 import org.jhotdraw.draw.handle.HandleAttributeKeys;
 import static org.jhotdraw.samples.svg.SVGAttributeKeys.*;
+
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -86,7 +88,7 @@ public class LinkHandle extends AbstractHandle {
     @Override
     public String getToolTipText(Point p) {
         return (getOwner().get(LINK) != null)
-                ? ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels").
+                ? ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS).
                         getString("handle.link.toolTipText")
                 : null;
     }

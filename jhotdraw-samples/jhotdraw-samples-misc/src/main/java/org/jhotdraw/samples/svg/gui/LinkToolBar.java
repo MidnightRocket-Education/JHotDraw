@@ -23,6 +23,8 @@ import org.jhotdraw.draw.event.SelectionComponentDisplayer;
 import org.jhotdraw.draw.gui.JAttributeTextArea;
 import org.jhotdraw.draw.gui.JAttributeTextField;
 import static org.jhotdraw.samples.svg.SVGAttributeKeys.*;
+
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.util.*;
 
 /**
@@ -41,7 +43,7 @@ public class LinkToolBar extends AbstractToolBar {
      * Creates new instance.
      */
     public LinkToolBar() {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
         setName(labels.getString(getID() + ".toolbar"));
         setDisclosureStateCount(3);
     }

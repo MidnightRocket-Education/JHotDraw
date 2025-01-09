@@ -27,6 +27,7 @@ import org.jhotdraw.draw.action.*;
 import org.jhotdraw.gui.JPopupButton;
 import org.jhotdraw.gui.action.ButtonFactory;
 import org.jhotdraw.gui.plaf.palette.PaletteButtonUI;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.samples.svg.figures.SVGGroupFigure;
 import org.jhotdraw.undo.UndoRedoManager;
 import org.jhotdraw.util.*;
@@ -48,7 +49,7 @@ public class ActionsToolBar extends AbstractToolBar {
      * Creates new instance.
      */
     public ActionsToolBar() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
         setName(labels.getString(getID() + ".toolbar"));
     }
 
@@ -122,7 +123,7 @@ public class ActionsToolBar extends AbstractToolBar {
                     break;
                 }
                 // Preferences prefs = PreferencesUtil.userNodeForPackage(getClass());
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
                 GridBagLayout layout = new GridBagLayout();
                 p.setLayout(layout);
                 GridBagConstraints gbc;

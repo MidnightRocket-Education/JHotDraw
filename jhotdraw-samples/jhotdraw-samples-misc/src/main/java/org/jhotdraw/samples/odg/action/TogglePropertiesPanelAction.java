@@ -12,6 +12,7 @@ import javax.swing.*;
 import org.jhotdraw.action.AbstractViewAction;
 import org.jhotdraw.api.app.Application;
 import org.jhotdraw.api.app.View;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.samples.odg.ODGView;
 import org.jhotdraw.util.*;
 
@@ -31,7 +32,7 @@ public class TogglePropertiesPanelAction extends AbstractViewAction {
     public TogglePropertiesPanelAction(Application app, View view) {
         super(app, view);
         setPropertyName("propertiesPanelVisible");
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.ODG_LABELS);
         putValue(AbstractAction.NAME, labels.getString("propertiesPanel"));
     }
 

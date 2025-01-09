@@ -15,6 +15,7 @@ import javax.swing.undo.*;
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.draw.action.*;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.samples.svg.figures.SVGBezierFigure;
 import org.jhotdraw.samples.svg.figures.SVGPathFigure;
 import org.jhotdraw.util.*;
@@ -38,7 +39,7 @@ public class CombineAction extends AbstractSelectedAction {
      */
     private boolean isCombineAction;
     private ResourceBundleUtil labels
-            = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+            = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
 
     /**
      * Creates a new instance.
@@ -55,7 +56,7 @@ public class CombineAction extends AbstractSelectedAction {
         super(editor);
         this.prototype = prototype;
         this.isCombineAction = isGroupingAction;
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
         labels.configureAction(this, ID);
         updateEnabledState();
     }

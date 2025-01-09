@@ -29,6 +29,7 @@ import org.jhotdraw.draw.tool.CreationTool;
 import org.jhotdraw.draw.tool.TextAreaCreationTool;
 import org.jhotdraw.gui.JPopupButton;
 import org.jhotdraw.gui.action.ButtonFactory;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.samples.pert.figures.DependencyFigure;
 import org.jhotdraw.samples.pert.figures.TaskFigure;
 import org.jhotdraw.undo.UndoRedoManager;
@@ -170,7 +171,7 @@ public class PertPanel extends JPanel {
     private void addCreationButtonsTo(JToolBar tb, final DrawingEditor editor) {
         // AttributeKeys for the entitie sets
         HashMap<AttributeKey<?>, Object> attributes;
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.pert.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.PERT_LABELS);
         ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         ButtonFactory.addSelectionToolTo(tb, editor);
         tb.addSeparator();

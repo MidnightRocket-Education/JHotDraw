@@ -26,6 +26,7 @@ import org.jhotdraw.draw.io.ImageInputFormat;
 import org.jhotdraw.draw.io.ImageOutputFormat;
 import org.jhotdraw.draw.io.InputFormat;
 import org.jhotdraw.io.BoundedRangeInputStream;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.samples.svg.figures.SVGImageFigure;
 import org.jhotdraw.samples.svg.gui.MessagePanel;
 import org.jhotdraw.samples.svg.gui.ProgressIndicator;
@@ -108,7 +109,7 @@ public class SVGApplet extends JApplet {
         if (getParameter("Locale") != null) {
             Locale.setDefault(new Locale(getParameter("Locale")));
         }
-        final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        final ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
         // Set look and feel
         // -----------------
         try {

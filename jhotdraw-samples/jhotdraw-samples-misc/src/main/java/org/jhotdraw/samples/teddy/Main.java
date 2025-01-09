@@ -9,6 +9,7 @@ package org.jhotdraw.samples.teddy;
 
 import java.util.HashMap;
 import org.jhotdraw.api.app.Application;
+import org.jhotdraw.samples.SampleResourceBundleID;
 
 /**
  * Main entry point of the Teddy sample application. Creates an
@@ -39,7 +40,7 @@ public class Main {
         TeddyApplicationModel tam = new TeddyApplicationModel();
         tam.setCopyright(COPYRIGHT);
         tam.setName(NAME);
-        tam.setViewClassName("org.jhotdraw.samples.teddy.TeddyView");
+        tam.setViewClassName(SampleResourceBundleID.TEDDY_VIEW.getId());
         tam.setVersion(Main.class.getPackage().getImplementationVersion());
         HashMap<String, String> types = new HashMap<String, String>();
         types.put("mdi", "org.jhotdraw.app.MDIApplication");

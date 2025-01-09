@@ -12,6 +12,7 @@ import javax.swing.Action;
 import org.jhotdraw.action.AbstractViewAction;
 import org.jhotdraw.api.app.Application;
 import org.jhotdraw.api.app.View;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.samples.teddy.TeddyView;
 import org.jhotdraw.util.*;
 
@@ -25,7 +26,7 @@ public class ToggleLineWrapAction extends AbstractViewAction {
 
     private static final long serialVersionUID = 1L;
     public static final String ID = "view.toggleLineWrap";
-    private ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.teddy.Labels");
+    private ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.TEDDY_LABELS);
 
     /**
      * Creates a new instance.

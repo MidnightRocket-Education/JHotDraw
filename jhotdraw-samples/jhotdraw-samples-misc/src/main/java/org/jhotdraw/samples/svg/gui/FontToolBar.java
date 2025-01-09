@@ -34,6 +34,7 @@ import org.jhotdraw.gui.JFontChooser;
 import org.jhotdraw.gui.JPopupButton;
 import org.jhotdraw.formatter.FontFormatter;
 import org.jhotdraw.formatter.JavaNumberFormatter;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.util.*;
 
 /**
@@ -51,7 +52,7 @@ public class FontToolBar extends AbstractToolBar {
      * Creates new instance.
      */
     public FontToolBar() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
         setName(labels.getString("font.toolbar"));
         JFontChooser.loadAllFonts();
         setDisclosureStateCount(3);
@@ -121,7 +122,7 @@ public class FontToolBar extends AbstractToolBar {
                 p1.setOpaque(false);
                 p2.setOpaque(false);
                 p3.setOpaque(false);
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
                 GridBagLayout layout = new GridBagLayout();
                 p.setLayout(layout);
                 GridBagConstraints gbc;
@@ -232,7 +233,7 @@ public class FontToolBar extends AbstractToolBar {
                 p1.setOpaque(false);
                 p2.setOpaque(false);
                 p3.setOpaque(false);
-                labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
                 layout = new GridBagLayout();
                 p.setLayout(layout);
                 // Font face field and popup button

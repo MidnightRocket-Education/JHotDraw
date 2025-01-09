@@ -34,6 +34,7 @@ import org.jhotdraw.draw.tool.TextAreaCreationTool;
 import org.jhotdraw.draw.tool.Tool;
 import org.jhotdraw.gui.JFileURIChooser;
 import org.jhotdraw.gui.action.ButtonFactory;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.samples.pert.figures.DependencyFigure;
 import org.jhotdraw.samples.pert.figures.TaskFigure;
 import org.jhotdraw.util.*;
@@ -113,7 +114,7 @@ public class PertApplicationModel extends DefaultApplicationModel {
     private void addCreationButtonsTo(JToolBar tb, final DrawingEditor editor) {
         // AttributeKeys for the entitie sets
         HashMap<AttributeKey<?>, Object> attributes;
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.pert.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.PERT_LABELS);
         ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle(ResourceBundleID.DRAW_LABELS);
         ButtonFactory.addSelectionToolTo(tb, editor);
         tb.addSeparator();

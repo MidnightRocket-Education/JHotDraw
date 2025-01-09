@@ -12,6 +12,7 @@ import org.jhotdraw.draw.figure.CompositeFigure;
 import java.util.*;
 import org.jhotdraw.draw.*;
 import org.jhotdraw.draw.action.*;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.samples.odg.figures.ODGPathFigure;
 import org.jhotdraw.util.*;
 
@@ -26,7 +27,7 @@ public class SplitAction extends UngroupAction {
     private static final long serialVersionUID = 1L;
     public static final String ID = "edit.splitPath";
     private ResourceBundleUtil labels
-            = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+            = ResourceBundleUtil.getBundle(SampleResourceBundleID.ODG_LABELS);
 
     /**
      * Creates a new instance.

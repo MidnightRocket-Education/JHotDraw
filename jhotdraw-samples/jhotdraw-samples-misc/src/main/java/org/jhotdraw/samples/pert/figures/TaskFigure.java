@@ -25,6 +25,7 @@ import org.jhotdraw.draw.handle.MoveHandle;
 import org.jhotdraw.draw.layouter.VerticalLayouter;
 import org.jhotdraw.draw.locator.RelativeLocator;
 import org.jhotdraw.geom.Insets2D;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.util.*;
 import org.jhotdraw.xml.*;
 
@@ -114,7 +115,7 @@ public class TaskFigure extends GraphicalCompositeFigure {
         startTimeFigure.setAttributeEnabled(FONT_BOLD, false);
         setAttributeEnabled(STROKE_DASHES, false);
         ResourceBundleUtil labels
-                = ResourceBundleUtil.getBundle("org.jhotdraw.samples.pert.Labels");
+                = ResourceBundleUtil.getBundle(SampleResourceBundleID.PERT_LABELS);
         setName(labels.getString("pert.task.defaultName"));
         setDuration(0);
         dependencies = new HashSet<DependencyFigure>();

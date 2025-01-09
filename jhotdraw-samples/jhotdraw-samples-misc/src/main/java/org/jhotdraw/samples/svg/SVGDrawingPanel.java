@@ -44,6 +44,7 @@ import org.jhotdraw.draw.io.OutputFormat;
 import org.jhotdraw.draw.io.TextInputFormat;
 import org.jhotdraw.gui.ToolBarLayout;
 import org.jhotdraw.gui.plaf.palette.PaletteLookAndFeel;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.samples.svg.figures.SVGImageFigure;
 import org.jhotdraw.samples.svg.figures.SVGTextFigure;
 import org.jhotdraw.samples.svg.io.ImageMapOutputFormat;
@@ -106,7 +107,7 @@ public class SVGDrawingPanel extends JPanel implements Disposable {
      * Creates new instance.
      */
     public SVGDrawingPanel() {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
         try {
             prefs = PreferencesUtil.userNodeForPackage(getClass());
         } catch (SecurityException e) {

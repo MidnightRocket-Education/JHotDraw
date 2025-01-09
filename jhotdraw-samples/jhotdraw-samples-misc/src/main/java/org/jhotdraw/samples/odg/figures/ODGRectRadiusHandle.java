@@ -15,6 +15,7 @@ import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.draw.handle.AbstractHandle;
 import org.jhotdraw.geom.Dimension2DDouble;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.undo.CompositeEdit;
 import org.jhotdraw.util.*;
 
@@ -100,7 +101,7 @@ public class ODGRectRadiusHandle extends AbstractHandle {
 
             @Override
             public String getPresentationName() {
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.ODG_LABELS);
                 return labels.getString("arc");
             }
 

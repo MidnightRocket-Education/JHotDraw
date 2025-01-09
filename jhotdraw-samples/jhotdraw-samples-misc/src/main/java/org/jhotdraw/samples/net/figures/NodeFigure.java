@@ -25,6 +25,7 @@ import org.jhotdraw.draw.handle.MoveHandle;
 import org.jhotdraw.draw.locator.RelativeLocator;
 import org.jhotdraw.geom.Geom;
 import org.jhotdraw.geom.Insets2D;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.util.*;
 import org.jhotdraw.xml.*;
 
@@ -51,7 +52,7 @@ public class NodeFigure extends TextFigure {
         setDecorator(rf);
         createConnectors();
         set(DECORATOR_INSETS, new Insets2D.Double(6, 10, 6, 10));
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.net.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.DRAW_VIEW);
         setText(labels.getString("nodeDefaultName"));
         setAttributeEnabled(DECORATOR_INSETS, false);
     }

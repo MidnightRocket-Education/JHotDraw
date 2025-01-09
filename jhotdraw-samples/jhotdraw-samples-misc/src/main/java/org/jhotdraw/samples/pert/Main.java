@@ -11,6 +11,7 @@ import org.jhotdraw.api.app.Application;
 import org.jhotdraw.app.DefaultApplicationModel;
 import org.jhotdraw.app.OSXApplication;
 import org.jhotdraw.app.SDIApplication;
+import org.jhotdraw.samples.SampleResourceBundleID;
 
 /**
  * Main entry point of the Pert sample application. Creates an {@link Application}
@@ -42,7 +43,7 @@ public class Main {
         model.setVersion(Main.class.getPackage().getImplementationVersion());
         model.setCopyright("Copyright 2006-2010 (c) by the authors of JHotDraw and all its contributors.\n"
                 + "This software is licensed under LGPL and Creative Commons 3.0 Attribution.");
-        model.setViewClassName("org.jhotdraw.samples.pert.PertView");
+        model.setViewClassName(SampleResourceBundleID.PERT_VIEW.getId());
         app.setModel(model);
         app.launch(args);
     }

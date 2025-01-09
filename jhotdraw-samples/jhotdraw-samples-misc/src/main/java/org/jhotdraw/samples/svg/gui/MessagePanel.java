@@ -10,6 +10,8 @@ package org.jhotdraw.samples.svg.gui;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
+
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.util.*;
 
 /**
@@ -37,7 +39,7 @@ public class MessagePanel extends javax.swing.JPanel {
     }
 
     public MessagePanel(Icon icon, String message) {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
         initComponents();
         setIcon(icon);
         setMessage(message);

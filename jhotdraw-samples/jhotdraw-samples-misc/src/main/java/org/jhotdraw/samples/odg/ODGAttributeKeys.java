@@ -10,6 +10,7 @@ package org.jhotdraw.samples.odg;
 import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import org.jhotdraw.draw.*;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.samples.odg.ODGConstants.FillStyle;
 import org.jhotdraw.samples.odg.ODGConstants.StrokeStyle;
 import org.jhotdraw.util.ResourceBundleUtil;
@@ -27,7 +28,7 @@ import org.jhotdraw.util.ResourceBundleUtil;
  */
 public class ODGAttributeKeys extends AttributeKeys {
 
-    private static final ResourceBundleUtil LABELS = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+    private static final ResourceBundleUtil LABELS = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
 
     /**
      * Prevent instance creation

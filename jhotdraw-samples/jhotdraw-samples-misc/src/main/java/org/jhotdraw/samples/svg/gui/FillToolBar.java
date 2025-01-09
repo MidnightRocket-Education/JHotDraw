@@ -29,6 +29,8 @@ import org.jhotdraw.draw.gui.JAttributeSlider;
 import org.jhotdraw.draw.gui.JAttributeTextField;
 import org.jhotdraw.gui.JPopupButton;
 import static org.jhotdraw.samples.svg.SVGAttributeKeys.*;
+
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.text.ColorFormatter;
 import org.jhotdraw.formatter.JavaNumberFormatter;
 import org.jhotdraw.util.*;
@@ -48,7 +50,7 @@ public class FillToolBar extends AbstractToolBar {
      * Creates new instance.
      */
     public FillToolBar() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
         setName(labels.getString(getID() + ".toolbar"));
         setDisclosureStateCount(3);
     }
@@ -77,7 +79,7 @@ public class FillToolBar extends AbstractToolBar {
                 if (editor == null) {
                     break;
                 }
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
                 GridBagLayout layout = new GridBagLayout();
                 p.setLayout(layout);
                 GridBagConstraints gbc;
@@ -138,7 +140,7 @@ public class FillToolBar extends AbstractToolBar {
                 p3.setOpaque(false);
                 p.setBorder(new EmptyBorder(5, 5, 5, 8));
                 p.removeAll();
-                labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
                 layout = new GridBagLayout();
                 p.setLayout(layout);
                 // Fill color field and button

@@ -24,6 +24,7 @@ import org.jhotdraw.draw.gui.JAttributeTextField;
 import org.jhotdraw.gui.JPopupButton;
 import static org.jhotdraw.samples.svg.SVGAttributeKeys.*;
 import org.jhotdraw.formatter.JavaNumberFormatter;
+import org.jhotdraw.samples.SampleResourceBundleID;
 import org.jhotdraw.util.*;
 
 /**
@@ -42,7 +43,7 @@ public class FigureToolBar extends AbstractToolBar {
      * Creates new instance.
      */
     public FigureToolBar() {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        labels = ResourceBundleUtil.getBundle(SampleResourceBundleID.SVG_LABELS);
         setName(labels.getString(getID() + ".toolbar"));
         setDisclosureStateCount(3);
     }
