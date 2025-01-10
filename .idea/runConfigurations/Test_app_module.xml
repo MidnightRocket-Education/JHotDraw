@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Test app module" type="JUnit" factoryName="JUnit">
+    <module name="jhotdraw-app" />
+    <option name="PACKAGE_NAME" value="" />
+    <option name="MAIN_CLASS_NAME" value="" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="package" />
+    <dir value="$PROJECT_DIR$/jhotdraw-app/src/test" />
+    <patterns>
+      <pattern testClass="org.jhotdraw.app.action.**" />
+    </patterns>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
