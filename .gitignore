@@ -3,6 +3,12 @@ nb-configuration.xml
 *.ftf
 /jhotdraw-samples/jhotdraw-samples-misc/nbproject/
 *.iml
+
+jgiven-reports/
+
+
+
+
 # Created by https://www.toptal.com/developers/gitignore/api/intellij,vim,macos,windows,linux,maven,java
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij,vim,macos,windows,linux,maven,java
 
