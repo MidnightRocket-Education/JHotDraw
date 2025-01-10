@@ -1,0 +1,83 @@
+{
+  "className": "org.jhotdraw.draw.action.BDDScenarioTest",
+  "name": "BDD Scenario",
+  "scenarios": [
+    {
+      "className": "org.jhotdraw.draw.action.BDDScenarioTest",
+      "testMethodName": "testAlignmentOfFiguresNorth",
+      "description": "test alignment of figures north",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "selected figures on canvas",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "selected figures on canvas"
+                },
+                {
+                  "value": "RectangleFigure@1659309731, RectangleFigure@1056862342",
+                  "argumentInfo": {
+                    "argumentName": "figures",
+                    "formattedValue": "RectangleFigure@1659309731, RectangleFigure@1056862342"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 2514959,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "alignment option is chosen",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "alignment option is chosen"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 44542,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "all figures are aligned to",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "all figures are aligned to"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 39083,
+              "depth": 0,
+              "parentFailed": false
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "durationInNanos": 8719292
+        }
+      ],
+      "casesAsTable": false,
+      "durationInNanos": 8719292
+    }
+  ],
+  "tagMap": {}
+}
